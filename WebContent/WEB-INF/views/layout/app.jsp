@@ -11,10 +11,17 @@
     <body>
         <div id=wrapper>
             <header id="header">
-             <h1>my music 情報</h1>
+             <h1>SITE Site</h1>
+             <p>ログイン</p>
+             <p>新規登録</p>
             </header>
             <div id="content">
                 ${param.content}
+            </div>
+            <div class="add-site-wrapper">
+                <div class="add-site-content">
+                    <a href="<c:url value='/addsite/index'/>">サイトを追加</a>
+                </div>
             </div>
             <footer id="footer">
                 riku kanemoto
