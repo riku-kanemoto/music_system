@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -28,9 +27,9 @@ public class MusicSite {
 
     @Column(name="url",nullable=false)
     private String url;
-    @Lob
-    @Column(name="image",nullable=false,columnDefinition="BLOB")
-    private byte[]image;
+    @Column(name="color_flag", nullable=false)
+    private Integer color_flag;
+
 
     @Column(name="delete_flag",nullable=false)
     private Integer delete_flag;
@@ -58,14 +57,15 @@ public class MusicSite {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    public byte[] getImage() {
-        return image;
+    public Integer getColor_flag() {
+        return color_flag;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setColor_flag(Integer color_flag) {
+        this.color_flag = color_flag;
     }
+
+
 
     public Integer getDelete_flag() {
         return delete_flag;
