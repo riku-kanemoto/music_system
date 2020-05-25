@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.MusicSite;
+
 /**
  * Servlet implementation class AddSiteIndexServlet
  */
@@ -29,6 +31,8 @@ public class AddSiteIndexServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
+        request.setAttribute("_token", request.getSession().getId());
+        request.setAttribute("musicSite", new MusicSite());
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/addSite/index.jsp");
         rd.forward(request, response);
     }

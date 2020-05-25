@@ -5,8 +5,8 @@
 <label for="url">サイトURL</label>
 <input type="url" name="url" >
 <label for="color">背景色</label>
-<input type="radio" name="back_color" value=1>Red
-<input type="radio" name="back_color" value=2>Blue
-<input type="radio" name="back_color" value=3>Yellow
+<input type="radio" name="color_flag" value="1">Red
+<input type="radio" name="color_flag" value="2">Blue
+<input type="radio" name="color_flag" value="3">Yellow
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿する</button>

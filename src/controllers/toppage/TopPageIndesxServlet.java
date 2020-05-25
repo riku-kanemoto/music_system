@@ -37,9 +37,9 @@ public class TopPageIndesxServlet extends HttpServlet {
         EntityManager em=DBUtil.createEntityManager();
         List <MusicSite> music_site=em.createNamedQuery("getAllMusicSites",MusicSite.class)
                 .getResultList();
-        response.getWriter().append(Integer.valueOf(music_site.size()).toString());
-
         em.close();
+
+        request.setAttribute("music_site", music_site);
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/toppage/index.jsp");
         rd.forward(request, response);
 
