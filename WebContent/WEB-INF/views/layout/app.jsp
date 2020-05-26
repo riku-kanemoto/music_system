@@ -13,16 +13,12 @@
             <header id="header">
              <h1>SITE Site</h1>
              <p>ログイン</p>
-             <p>新規登録</p>
+             <a href="<c:url value='/member/new'/>">新規登録</a>
             </header>
             <div id="content">
                 ${param.content}
             </div>
-            <div class="add-site-wrapper">
-                <div class="add-site-content">
-                    <a href="<c:url value='/site/new'/>">サイトを追加</a>
-                </div>
-            </div>
+
             <footer id="footer">
                 riku kanemoto
             </footer>

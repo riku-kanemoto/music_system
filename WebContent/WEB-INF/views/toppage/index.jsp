@@ -19,6 +19,11 @@
                     </div>
                 </c:forEach>
             </div>
+            <div class="add-site-wrapper">
+                <div class="add-site-content">
+                    <a href="<c:url value='/site/new'/>">サイトを追加</a>
+                </div>
+            </div>
         </div>
     </c:param>
 </c:import>
