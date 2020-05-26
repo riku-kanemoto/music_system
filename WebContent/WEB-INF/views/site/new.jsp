@@ -3,7 +3,7 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <div>
-            <form method="POST" action="<c:url value='/addsite/create'/>">
+            <form method="POST" action="<c:url value='/site/create'/>">
                  <c:import url="_form.jsp" />
             </form>
         </div>

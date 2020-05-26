@@ -12,7 +12,7 @@
                 <p>登録してサイトを追加しよう！</p>
             </div>
             <div>
-                <c:forEach var="musicSite" items="${music_site}">
+                <c:forEach var="musicSite" items="${musicSites}">
                     <div class="site_object">
                         <p><c:out value="${musicSite.name}"/></p>
                         <a href="${musicSite.url}">サイトに飛ぶ</a>

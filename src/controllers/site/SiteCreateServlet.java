@@ -1,4 +1,4 @@
-package controllers.addsite;
+package controllers.site;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -16,14 +16,14 @@ import utils.DBUtil;
 /**
  * Servlet implementation class AddSiteCreate
  */
-@WebServlet("/addsite/create")
-public class AddSiteCreate extends HttpServlet {
+@WebServlet("/site/create")
+public class SiteCreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddSiteCreate() {
+    public SiteCreateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -35,11 +35,11 @@ public class TopPageIndesxServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
         EntityManager em=DBUtil.createEntityManager();
-        List <MusicSite> music_site=em.createNamedQuery("getAllMusicSites",MusicSite.class)
+        List <MusicSite> musicSites=em.createNamedQuery("getAllMusicSites",MusicSite.class)
                 .getResultList();
         em.close();
 
-        request.setAttribute("music_site", music_site);
+        request.setAttribute("musicSites", musicSites);
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/toppage/index.jsp");
         rd.forward(request, response);
 

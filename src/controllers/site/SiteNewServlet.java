@@ -1,4 +1,4 @@
-package controllers.addsite;
+package controllers.site;
 
 import java.io.IOException;
 
@@ -14,14 +14,14 @@ import models.MusicSite;
 /**
  * Servlet implementation class AddSiteIndexServlet
  */
-@WebServlet("/addsite/index")
-public class AddSiteIndexServlet extends HttpServlet {
+@WebServlet("/site/new")
+public class SiteNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddSiteIndexServlet() {
+    public SiteNewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +33,7 @@ public class AddSiteIndexServlet extends HttpServlet {
         // TODO Auto-generated method stub
         request.setAttribute("_token", request.getSession().getId());
         request.setAttribute("musicSite", new MusicSite());
-        RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/addSite/index.jsp");
+        RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/site/new.jsp");
         rd.forward(request, response);
     }
 
