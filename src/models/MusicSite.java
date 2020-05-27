@@ -16,6 +16,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name="getAllMusicSites",
             query="select m from MusicSite as m order by m.id desc"
+            ),
+    @NamedQuery(
+            name="getMyMusicSites",
+            query="select m from MusicSite as m where m.member=:member order by m.id desc"
             )
 })
 @Table(name="music_site")
