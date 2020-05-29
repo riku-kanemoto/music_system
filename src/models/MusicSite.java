@@ -38,7 +38,6 @@ public class MusicSite {
     @Column(name="color_flag", nullable=false)
     private Integer color_flag;
 
-
     @Column(name="delete_flag",nullable=false)
     private Integer delete_flag;
 
@@ -106,5 +105,12 @@ public class MusicSite {
 
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
+    }
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 }

@@ -68,7 +68,7 @@ public class MemberCreateServlet extends HttpServlet {
                 em.persist(m);
                 em.getTransaction().commit();
                 em.close();
-                response.sendRedirect(request.getContextPath()+"/index.html");
+                response.sendRedirect(request.getContextPath()+"/member/index");
             }
         }
     }

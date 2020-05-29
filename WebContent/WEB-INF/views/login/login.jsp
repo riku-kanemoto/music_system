@@ -10,7 +10,7 @@
         <h2>ログイン</h2>
         <form method="POST" action="<c:url value='/login'/>">
             <label for="adress">メールアドレス</label>
-            <input type="email" name="aderes" value="${adress}">
+            <input type="email" name="adress" value="${adress}">
             <label for="password">パスワード</label>
             <input type="password" name="password">
             <input type="hidden" name="_token" value="${_token}">

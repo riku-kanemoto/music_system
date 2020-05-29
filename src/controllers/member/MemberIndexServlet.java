@@ -39,10 +39,10 @@ public class MemberIndexServlet extends HttpServlet {
 
         Member login_member=(Member)request.getSession().getAttribute("login_member");
 
-        List<MusicSite> musicsites=em.createNamedQuery("getMyMusicSites",MusicSite.class)
+        List<MusicSite> musicSites=em.createNamedQuery("getMyMusicSites",MusicSite.class)
                 .setParameter("member", login_member)
                 .getResultList();
-        request.setAttribute("musicsites", musicsites);
+        request.setAttribute("musicSites", musicSites);
 
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/member/index.jsp");
         rd.forward(request, response);

@@ -78,7 +78,7 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("haserror", true);
             request.setAttribute("adress", adress);
 
-            RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/views/login.jsp");
+            RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
             rd.forward(request, response);
         }
         else{

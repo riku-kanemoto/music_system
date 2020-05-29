@@ -17,7 +17,7 @@ import utils.DBUtil;
 /**
  * Servlet implementation class TopPageIndesxServlet
  */
-@WebServlet("/index.html")
+@WebServlet("/toppage/index")
 public class TopPageIndesxServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

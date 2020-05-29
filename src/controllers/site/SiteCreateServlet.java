@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Member;
 import models.MusicSite;
 import utils.DBUtil;
 
@@ -37,6 +38,7 @@ public class SiteCreateServlet extends HttpServlet {
         if(_token !=null&&_token.equals(request.getSession().getId())){
             EntityManager em=DBUtil.createEntityManager();
             MusicSite m=new MusicSite();
+            m.setMember((Member)request.getSession().getAttribute("login_member"));
             m.setName(request.getParameter("name"));
             m.setUrl(request.getParameter("url"));
             m.setColor_flag(Integer.parseInt(request.getParameter("color_flag")));
@@ -50,7 +52,7 @@ public class SiteCreateServlet extends HttpServlet {
             em.persist(m);
             em.getTransaction().commit();
             em.close();
-            response.sendRedirect("/index.html");
+            response.sendRedirect(request.getContextPath()+"/member/index");
         }
     }
 

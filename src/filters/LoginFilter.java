@@ -45,23 +45,22 @@ public class LoginFilter implements Filter {
         String context_path=((HttpServletRequest)request).getContextPath();
         String servlet_path=((HttpServletRequest)request).getServletPath();
 
-        if(!servlet_path.matches("/css.*") && !servlet_path.matches("/toppage.*")){
-            HttpSession session=((HttpServletRequest)request).getSession();
-            Member m=(Member)session.getAttribute("login_member");
-            if(!servlet_path.equals("/login")){
-                if(m==null){
-                    ((HttpServletResponse)response).sendRedirect(context_path+"/");
-                    return;
-                }
-                if(servlet_path.matches("/admin.*") && m.getAdmin_flag()==0){
-                    ((HttpServletResponse)response).sendRedirect(context_path+"/");
-                    return;
-                }
-            }else{
-                if(m !=null){
-                    ((HttpServletResponse)response).sendRedirect(context_path+"/");
-                    return;
-                }
+        if(!servlet_path.matches("/css.*")){
+            if(!servlet_path.matches("/toppage.*")){
+                HttpSession session=((HttpServletRequest)request).getSession();
+                Member m=(Member)session.getAttribute("login_member");
+                if(!servlet_path.equals("/login")){
+                    if(m==null ){
+                        ((HttpServletResponse)response).sendRedirect(context_path+"/toppage/index");
+                        return;
+                    }
+
+                }else{
+                    if(m !=null){
+                        ((HttpServletResponse)response).sendRedirect(context_path+"/toppage/index");
+                        return;
+                    }
+            }
             }
         }
 
