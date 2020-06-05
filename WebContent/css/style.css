@@ -1,0 +1,344 @@
+@charset "UTF-8";
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sm, .allsite__site__item__link > p, .allsite__site__item__name a {
+  font-size: 14px;
+}
+
+.font-md, .header__category {
+  font-size: 17px;
+}
+
+.font-lg, .header__name {
+  font-size: 20px;
+}
+
+.font-title {
+  font-size: 25px;
+}
+
+.content-width, .site-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.circle, .allsite__site__create, .allsite__site__item__link {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 0.5px solid red;
+}
+
+.circle-link, .allsite__site__create > .create, .allsite__site__item__link > .link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: 50;
+}
+
+#container {
+  position: relative;
+  background-color: black;
+  z-index: 2;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.header {
+  background-color: red;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.header__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__name {
+  font-weight: 500;
+}
+
+.header__category {
+  margin-left: 10px;
+  color: white;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+.acount {
+  height: 100%;
+  position: relative;
+}
+
+.acount-menu__btn {
+  padding: 9px;
+  cursor: pointer;
+  background-color: unset;
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.category {
+  margin-top: 3px;
+  margin-left: 15px;
+}
+
+.category__btn {
+  padding: 0;
+  cursor: pointer;
+  background-color: unset;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.category__btn > span {
+  background-color: black;
+  width: 25px;
+  height: 2px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.menu-open #container {
+  -webkit-transform: translate(-200px, 60px);
+          transform: translate(-200px, 60px);
+}
+
+.category-menu {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 200px;
+}
+
+.category-menu__main {
+  margin-left: 60px;
+}
+
+.main-title {
+  color: red;
+  font-weight: 500;
+  font-size: 18px;
+  display: block;
+}
+
+.sub-title {
+  text-decoration: none !important;
+  color: black;
+}
+
+.movie {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movie > .youtube {
+  width: 70%;
+  height: auto;
+  border: 0.2px solid red;
+}
+
+.allsite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px 0;
+}
+
+.allsite__site {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.allsite__site__create {
+  background-color: green;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  position: relative;
+}
+
+.allsite__site__create > .create {
+  cursor: pointer;
+}
+
+.allsite__site__create > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85px;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+.allsite__site__item {
+  text-align: center;
+}
+
+.allsite__site__item__link {
+  background-color: green;
+  position: relative;
+}
+
+.allsite__site__item__link > .link {
+  cursor: pointer;
+}
+
+.allsite__site__item__link > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+.allsite__site__item__name a {
+  text-decoration: none !important;
+  color: red;
+}
+
+@media (min-width: 480px) {
+  /******************************************************************
+
+Stylesheet: 480px以上(スマホの横向き)のモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 600px) {
+  /******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+  .movie {
+    height: 400px;
+  }
+  .movie > .youtube {
+    width: 70%;
+    height: 80%;
+  }
+  .allsite__site {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
+@media (min-width: 960px) {
+  /******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+  .font-sm, .allsite__site__item__link > p, .allsite__site__item__name a {
+    font-size: 17px;
+  }
+  .font-md, .header__category {
+    font-size: 20px;
+  }
+  .font-lg, .header__name {
+    font-size: 23px;
+  }
+  .movie {
+    height: 500px;
+  }
+  .movie > .youtube {
+    width: 80%;
+    height: 90%;
+  }
+  .allsite__site {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
+}
+
+@media (min-width: 1280px) {
+  /******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /******************************************************************
+
+Stylesheet: Retinaディスプレイで適用
+
+******************************************************************/
+  /*
+
+
+
+*/
+}
+

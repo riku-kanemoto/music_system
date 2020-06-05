@@ -20,7 +20,7 @@ import validators.MemberValidator;
 /**
  * Servlet implementation class MemberCreateServlet
  */
-@WebServlet("/member/create")
+@WebServlet("/toppage/membercreate")
 public class MemberCreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

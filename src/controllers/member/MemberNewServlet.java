@@ -14,7 +14,7 @@ import models.Member;
 /**
  * Servlet implementation class MemberNewServlet
  */
-@WebServlet("/member/new")
+@WebServlet("/toppage/membernew")
 public class MemberNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

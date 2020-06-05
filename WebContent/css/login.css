@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sm {
+  font-size: 14px;
+}
+
+.font-md, .header__category, .login-menu__item, .new-acount {
+  font-size: 17px;
+}
+
+.font-lg, .header__name {
+  font-size: 20px;
+}
+
+.font-title, .login-title__item {
+  font-size: 25px;
+}
+
+.header {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+}
+
+.header__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
+}
+
+.header__name {
+  color: red;
+  font-weight: 500;
+}
+
+.header__category {
+  color: white;
+  margin-left: 10px;
+}
+
+.flush__error {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login-content {
+  height: 100vh;
+  background-color: red;
+}
+
+.login-title {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.login-menu__item input {
+  width: 60%;
+  margin: 20px auto;
+}
+
+.login-menu__btn {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.new-acount {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (min-width: 480px) {
+  /******************************************************************
+
+Stylesheet: 480px以上(スマホの横向き)のモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 600px) {
+  /******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 960px) {
+  /******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+  .font-sm {
+    font-size: 17px;
+  }
+  .font-md, .header__category, .login-menu__item, .new-acount {
+    font-size: 20px;
+  }
+  .font-lg, .header__name {
+    font-size: 23px;
+  }
+  .font-title, .login-title__item {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /******************************************************************
+
+Stylesheet: Retinaディスプレイで適用
+
+******************************************************************/
+  /*
+
+EXAMPLE
+.icon {
+    background: url(images/test@2x.png) no-repeat;
+    background-size: 24px 24px;
+}
+
+*/
+}
+
+@media print {
+  /******************************************************************
+
+Stylesheet: プリンタのみに適用
+
+******************************************************************/
+}

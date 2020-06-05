@@ -4,24 +4,15 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>my music 情報</title>
-        <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
-        <link rel="stylesheet" href="<c:url value='/css/style.css' />">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+          <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+          <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+          <title>Document</title>
     </head>
     <body>
-        <div id=wrapper>
-            <header id="header">
-             <h1>SITE Site</h1>
-             <a href="<c:url value='/member/new'/>">新規登録</a>
-             <a href="<c:url value='/login'/>">ログイン</a>
-            </header>
-            <div id="content">
-                ${param.content}
-            </div>
 
-            <footer id="footer">
-                riku kanemoto
-            </footer>
-        </div>
+        <script type="text/javascript" src='<c:url value="/scripts/category-menu.js"/>'></script>
     </body>
 </html>
