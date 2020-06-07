@@ -1,4 +1,4 @@
-package validators;
+package models.validators;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class MemberValidator {
     private static String _validateAdress(String adress, Boolean code_duplicate_check_flag) {
 
         if(adress == null || adress.equals("")) {
-            return "アドレスを入力してください。";
+            return "メールアドレスを入力してください。";
         }
 
 
@@ -44,7 +44,7 @@ public class MemberValidator {
                                              .getSingleResult();
             em.close();
             if(members_count > 0) {
-                return "入力されたアドレスはすでに存在しています。";
+                return "入力されたメールアドレスはすでに存在しています。";
             }
         }
 
@@ -69,3 +69,5 @@ public class MemberValidator {
         return "";
     }
 }
+
+

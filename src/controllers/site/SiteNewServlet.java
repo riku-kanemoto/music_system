@@ -14,7 +14,7 @@ import models.MusicSite;
 /**
  * Servlet implementation class AddSiteIndexServlet
  */
-@WebServlet({"/toppage/site/new","/site/new"})
+@WebServlet("/site/new")
 public class SiteNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -33,6 +33,8 @@ public class SiteNewServlet extends HttpServlet {
         // TODO Auto-generated method stub
         request.setAttribute("_token", request.getSession().getId());
         request.setAttribute("musicSite", new MusicSite());
+        String make_acount=(String) request.getSession().getAttribute("test");
+        request.setAttribute("make_acount", make_acount);
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/site/new.jsp");
         rd.forward(request, response);
     }

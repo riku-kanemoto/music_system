@@ -57,7 +57,7 @@
           <div class="allsite">
             <div class="allsite__site">
               <div class="allsite__site__create ">
-                <a href="<c:url value='/toppage/site/new'/>" class="create"></a>
+                <a href="<c:url value='/site/new'/>" class="create"></a>
                 <p>サイト追加</p>
               </div>
             </div>
@@ -87,7 +87,7 @@
               <a href="<c:url value='/login'/>" class="sub-title">ログイン</a>
             </li>
             <li class="menu-title__item">
-              <a href="<c:url value='/toppage/membernew'/>" class="sub-title">新規登録</a>
+              <a href="<c:url value='/toppage/member/new'/>" class="sub-title">新規登録</a>
             </li>
           </ul>
         </li>

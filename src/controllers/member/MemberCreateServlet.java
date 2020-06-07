@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Member;
+import models.validators.MemberValidator;
 import utils.DBUtil;
 import utils.EncryptUtil;
-import validators.MemberValidator;
 
 /**
  * Servlet implementation class MemberCreateServlet
  */
-@WebServlet("/toppage/membercreate")
+@WebServlet("/toppage/member/create")
 public class MemberCreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

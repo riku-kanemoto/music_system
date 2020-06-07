@@ -19,6 +19,15 @@
         </div>
       </div>
     </header>
+    <div class="flush__error">
+      <p>${make_acount}</p>
+      <c:if test="${errors !=null}">
+        入力内容にエラーがあります。<br/>
+        <c:forEach var="error" items="${errors}">
+            ・<c:out value="${error}" /><br />
+        </c:forEach>
+      </c:if>
+    </div>
     <section class="create-content">
       <div class="create">
         <div class="create-title">
@@ -28,11 +37,11 @@
           <div class="create-menu">
             <div class="create-menu__item">
               <label for="name">サイト名</label>
-              <input type="text" name="name" >
+              <input type="text" name="name" value="${musicSite.name}">
             </div>
             <div class="create-menu__item">
               <label for="url">サイトURL</label>
-            <input type="url" name="url" >
+            <input type="url" name="url" value="${musicSite.url}">
             </div>
             <div class="create-menu__color">
               <label for="color">背景色</label>

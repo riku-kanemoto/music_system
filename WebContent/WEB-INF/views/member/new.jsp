@@ -20,13 +20,18 @@
       </div>
     </header>
     <div class="flush__error">
-      <span>アドレスかパスワードが間違っています。</span>
+      <c:if test="${errors !=null}">
+        入力内容にエラーがあります。<br/>
+        <c:forEach var="error" items="${errors}">
+            ・<c:out value="${error}" /><br />
+        </c:forEach>
+      </c:if>
     </div>
     <section id="login-content">
       <div class="login-title">
         <h1 class="login-title__item">Create</h1>
       </div>
-      <form method="POST" action="<c:url value='/member/create'/>">
+      <form method="POST" action="<c:url value='/toppage/member/create'/>">
         <div class="login-menu">
           <div class="login-menu__item">
             <label for="name">名前</label>

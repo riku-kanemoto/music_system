@@ -21,7 +21,9 @@
       </div>
     </header>
     <div class="flush__error">
-      <span>アドレスかパスワードが間違っています。</span>
+      <c:if test="${haserror}">
+        メールアドレスかパスワードが間違っています。
+      </c:if>
     </div>
     <section id="login-content">
       <div class="login-title">
@@ -44,7 +46,7 @@
         </div>
       </form>
       <div class="new-acount">
-        <p>アカウントをお持ちでない方は<a href="<c:url value='/member/mew'/>">こちらから</a></p>
+        <p>アカウントをお持ちでない方は<a href="<c:url value='toppage/member/new'/>">こちらから</a></p>
       </div>
     </section>
   </div>

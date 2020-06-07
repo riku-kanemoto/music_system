@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /******************************************************************
 
 Stylesheet: ベーススタイル
@@ -12,7 +11,7 @@ body {
   font-size: 14px;
 }
 
-.font-md, .header__category, .login-menu__item, .new-acount {
+.font-md, .header__category, .create-menu__item {
   font-size: 17px;
 }
 
@@ -20,14 +19,15 @@ body {
   font-size: 20px;
 }
 
-.font-title, .login-title__item {
+.font-title, .create-title {
   font-size: 25px;
 }
 
 .header {
-  background-color: black;
+  background-color: red;
   width: 100%;
   height: 50px;
+  position: relative;
 }
 
 .header__title {
@@ -42,8 +42,8 @@ body {
 }
 
 .header__name {
-  color: red;
-  font-weight: 500;
+  color: black;
+  font-weight: 550;
 }
 
 .header__category {
@@ -64,13 +64,25 @@ body {
           align-items: center;
 }
 
-#login-content {
+.create-content {
+  background-color: black;
   height: 100vh;
-  background-color: red;
 }
 
-.login-title {
-  height: 50px;
+.create {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  height: 600px;
+  width: 350px;
+  border-radius: 50%;
+  border: 0.5px solid red;
+}
+
+.create-title {
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,9 +92,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: white;
 }
 
-.login-menu {
+.create-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,7 +105,7 @@ body {
           flex-direction: column;
 }
 
-.login-menu__item {
+.create-menu__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,24 +114,29 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  margin-bottom: 5px;
-  font-weight: 500;
+  color: white;
 }
 
-.login-menu__item input {
+.create-menu__item input {
   width: 60%;
   margin: 20px auto;
 }
 
-.login-menu__btn {
+.create-menu__color {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
-  margin-top: 10px;
+  margin: 20px 0;
 }
 
-.new-acount {
-  margin-top: 50px;
+.create-menu__btn {
   text-align: center;
-  font-weight: 500;
+  margin-top: 10px;
 }
 
 @media (min-width: 480px) {
@@ -146,13 +164,13 @@ Stylesheet: 960px以上のモニタで適用
   .font-sm {
     font-size: 17px;
   }
-  .font-md, .header__category, .login-menu__item, .new-acount {
+  .font-md, .header__category, .create-menu__item {
     font-size: 20px;
   }
   .font-lg, .header__name {
     font-size: 23px;
   }
-  .font-title, .login-title__item {
+  .font-title, .create-title {
     font-size: 28px;
   }
 }

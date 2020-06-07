@@ -2,8 +2,10 @@ package controllers.site;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Member;
 import models.MusicSite;
+import models.validators.SiteValidator;
 import utils.DBUtil;
 
 /**
@@ -47,6 +50,17 @@ public class SiteCreateServlet extends HttpServlet {
             m.setCreated_at(currentTime);
             m.setUpdated_at(currentTime);
             m.setDelete_flag(0);
+
+            List<String> errors =SiteValidator.validate(m);
+            if(errors.size()>0){
+                em.close();
+
+                request.setAttribute("_token", request.getSession().getId());
+                request.setAttribute("musicSite", m);
+                request.setAttribute("errors", errors);
+                RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/site/new.jsp");
+                rd.forward(request, response);
+            }
 
             em.getTransaction().begin();
             em.persist(m);

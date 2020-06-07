@@ -44,11 +44,13 @@ public class LoginFilter implements Filter {
         // place your code here
         String context_path=((HttpServletRequest)request).getContextPath();
         String servlet_path=((HttpServletRequest)request).getServletPath();
+        HttpSession session=((HttpServletRequest)request).getSession();
+        Member m=(Member)session.getAttribute("login_member");
 
         if(!servlet_path.matches("/css.*")){
             if(!servlet_path.matches("/toppage.*")){
-                HttpSession session=((HttpServletRequest)request).getSession();
-                Member m=(Member)session.getAttribute("login_member");
+                if(!servlet_path.equals("/site/new")){
+
                 if(!servlet_path.equals("/login")){
                     if(m==null ){
                         ((HttpServletResponse)response).sendRedirect(context_path+"/toppage/index");
@@ -62,8 +64,15 @@ public class LoginFilter implements Filter {
                     }
             }
             }
+            if(m==null){
+                 String test="サイトを追加するにはアカウントを登録してください";
+                 session.setAttribute("test", test);
+                }else{
+                    String test="";
+                    session.setAttribute("test", test);
+                }
         }
-
+        }
         // pass the request along the filter chain
         chain.doFilter(request, response);
     }
