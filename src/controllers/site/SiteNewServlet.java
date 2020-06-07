@@ -14,7 +14,7 @@ import models.MusicSite;
 /**
  * Servlet implementation class AddSiteIndexServlet
  */
-@WebServlet("/site/new")
+@WebServlet({"/toppage/site/new","/site/new"})
 public class SiteNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

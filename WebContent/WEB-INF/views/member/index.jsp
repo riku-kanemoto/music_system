@@ -65,6 +65,44 @@
                     <div class="allsite__site__item__name">
                       <a href="${musicSite.url}">${musicSite.name}</a>
                     </div>
+                    <c:choose>
+                        <c:when test="${favoliteCheck==0}">
+                            <form method="POST" action="<c:url value='/add/favolite?id=${musicSite.id}'/>">
+                                    <input type="hidden" name="_token" value="${_token}"/>
+                                    <button type="submit" class="favolite-btn">
+                                        <span class="material-icons"id="favorite_border">
+                                            favorite_border
+                                        </span>
+                                    </button>
+                                </form>
+                        </c:when>
+                        <c:otherwise>
+                            <c:forEach var="f" items="${fs}">
+                                <c:choose>
+                                    <c:when test="${f !=musicSite}">
+                                        <form method="POST" action="<c:url value='/add/favolite?id=${musicSite.id}'/>">
+                                            <input type="hidden" name="_token" value="${_token}"/>
+                                            <button type="submit" class="favolite-btn">
+                                                <span class="material-icons"id="favorite_border">
+                                                    favorite_border
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </c:when>
+                                    <c:otherwise>
+                                      <form method="POST" action="<c:url value='/destroy/favolite?id=${musicSite.id}'/>">
+                                            <input type="hidden" name="_token" value="${_token}"/>
+                                            <button class="favolite-btn">
+                                                <span class="material-icons"id="favorite">
+                                                    favorite
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
                   </div>
                 </div>
             </c:forEach>

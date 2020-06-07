@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name="getAllFavoliteSite",
-            query="select f.site_id from Favolite as f where f.member_id=:member_id order by f.id desc"
+            query="select f.site_id from Favolite as f where f.member_id=:member_id and f.favolite_flag=1 order by f.id desc"
             ),
     @NamedQuery(
             name="getFavoliteCheck",

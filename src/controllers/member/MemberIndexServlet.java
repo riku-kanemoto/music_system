@@ -38,11 +38,25 @@ public class MemberIndexServlet extends HttpServlet {
         EntityManager em=DBUtil.createEntityManager();
 
         Member login_member=(Member)request.getSession().getAttribute("login_member");
+        Integer favoliteCheck;
+
+        List<MusicSite> fs=em.createNamedQuery("getAllFavoliteSite",MusicSite.class)
+                .setParameter("member_id",login_member)
+                .getResultList();
 
         List<MusicSite> musicSites=em.createNamedQuery("getMyMusicSites",MusicSite.class)
                 .setParameter("member", login_member)
                 .getResultList();
-        request.setAttribute("musicSites", musicSites);
+        if(fs.size()==0){
+            favoliteCheck=0;
+            request.setAttribute("favoliteCheck", favoliteCheck);
+            request.setAttribute("musicSites", musicSites);
+        }else{
+            favoliteCheck=1;
+            request.setAttribute("favoliteCheck", favoliteCheck);
+            request.setAttribute("musicSites", musicSites);
+            request.setAttribute("fs",fs);
+        }
 
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/member/index.jsp");
         rd.forward(request, response);

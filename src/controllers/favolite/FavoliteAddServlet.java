@@ -17,7 +17,7 @@ import utils.DBUtil;
 /**
  * Servlet implementation class FavoliteAddServlet
  */
-@WebServlet("/FavoliteAddServlet")
+@WebServlet("/add/favolite")
 public class FavoliteAddServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -35,8 +35,7 @@ public class FavoliteAddServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        String _token=(String)request.getParameter("_token");
-        if(_token !=null && _token.equals(request.getSession().getId())){
+
             EntityManager em =DBUtil.createEntityManager();
             Member login_member=(Member)request.getSession().getAttribute("login_member");
             MusicSite site=em.find(MusicSite.class,Integer.parseInt(request.getParameter("id")));
@@ -54,8 +53,20 @@ public class FavoliteAddServlet extends HttpServlet {
                 em.getTransaction().commit();
                 em.close();
                 response.sendRedirect(request.getContextPath()+"/member/index");
+
+            }else{
+                Favolite f=new Favolite();
+                f.setMember_id(login_member);
+                f.setSite_id(site);
+                f.setFavolite_flag(1);
+                em.getTransaction().begin();
+                em.persist(f);
+                em.getTransaction().commit();
+                em.close();
+                response.sendRedirect(request.getContextPath()+"/member/index");
             }
-        }
+
+
     }
 
 }

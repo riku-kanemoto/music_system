@@ -57,7 +57,7 @@
           <div class="allsite">
             <div class="allsite__site">
               <div class="allsite__site__create ">
-                <a href="<c:url value='/site/new'/>" class="create"></a>
+                <a href="<c:url value='/toppage/site/new'/>" class="create"></a>
                 <p>サイト追加</p>
               </div>
             </div>
