@@ -59,7 +59,7 @@ public class LoginFilter implements Filter {
 
                 }else{
                     if(m !=null){
-                        ((HttpServletResponse)response).sendRedirect(context_path+"/toppage/index");
+                        ((HttpServletResponse)response).sendRedirect(context_path+"/member/index");
                         return;
                     }
             }

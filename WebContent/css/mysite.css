@@ -20,7 +20,7 @@ body {
   font-size: 20px;
 }
 
-.font-title {
+.font-title, .mysite-title__item {
   font-size: 25px;
 }
 
@@ -42,15 +42,15 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
+  border-radius: 50%;
   z-index: 50;
 }
 
 #container {
   position: relative;
-
-  z-index: 2;
   height: 100%;
   background-color: black;
+  z-index: 2;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -177,8 +177,8 @@ body {
   color: black;
 }
 
-.movie {
-  height: 300px;
+.mysite-title {
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,13 +188,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 20px;
-}
-
-.movie > .youtube {
-  width: 70%;
-  height: auto;
-  border: 0.2px solid red;
+  background-color: white;
 }
 
 .allsite {
@@ -268,10 +262,6 @@ body {
   color: red;
 }
 
-#favorite_border {
-  color: red;
-}
-
 #favorite {
   color: red;
 }
@@ -297,13 +287,6 @@ Stylesheet: 480px以上(スマホの横向き)のモニタで適用
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 ******************************************************************/
-  .movie {
-    height: 400px;
-  }
-  .movie > .youtube {
-    width: 70%;
-    height: 80%;
-  }
   .allsite__site {
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
@@ -325,16 +308,15 @@ Stylesheet: 960px以上のモニタで適用
   .font-lg, .header__name {
     font-size: 23px;
   }
-  .movie {
-    height: 600px;
-  }
-  .movie > .youtube {
-    width: 90%;
-    height: 90%;
+  .font-title, .mysite-title__item {
+    font-size: 28px;
   }
   .allsite__site {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
+  }
+  .favolite-title {
+    height: 100px;
   }
 }
 
@@ -344,15 +326,33 @@ Stylesheet: 960px以上のモニタで適用
 Stylesheet: 1280px以上のモニタで適用
 
 ******************************************************************/
-  .movie {
-    height: 600px;
-  }
-  .movie > .youtube {
-    width: 80%;
-    height: 90%;
-  }
   .allsite__site {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /******************************************************************
+
+Stylesheet: Retinaディスプレイで適用
+
+******************************************************************/
+  /*
+
+EXAMPLE
+.icon {
+    background: url(images/test@2x.png) no-repeat;
+    background-size: 24px 24px;
+}
+
+*/
+}
+
+@media print {
+  /******************************************************************
+
+Stylesheet: プリンタのみに適用
+
+******************************************************************/
 }

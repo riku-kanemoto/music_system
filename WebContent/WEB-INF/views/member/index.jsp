@@ -123,7 +123,10 @@
           <span class="main-title">Category</span>
           <ul class="menu-title">
             <li class="menu-title__item">
-              <a href="#" class="sub-title">お気に入り</a>
+              <a href="<c:url value='/favolite/index'/>" class="sub-title">お気に入り</a>
+            </li>
+            <li class="menu-title__item">
+              <a href="<c:url value='/mysite'/>" class="sub-title">My Site</a>
             </li>
             <li class="menu-title__item">
               <a href="#" class="sub-title">Music</a>
@@ -137,6 +140,6 @@
     </nav>
   </div>
 
- <script type="text/javascript" src='<c:url value="/scripts/category-menu.js"/>'></script>
+<script type="text/javascript" src='<c:url value="/scripts/category-menu.js"/>'></script>
 </body>
 </html>
