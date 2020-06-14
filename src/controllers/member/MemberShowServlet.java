@@ -50,6 +50,16 @@ public class MemberShowServlet extends HttpServlet {
         List<MusicSite> fs=em.createNamedQuery("getAllFavoliteSite",MusicSite.class)
                 .setParameter("member_id", login_member)
                 .getResultList();
+        if(login_member.getId()==member.getId()){
+            em.close();
+            request.setAttribute("check_member", true);
+            request.setAttribute("member", member);
+            request.setAttribute("musicSites",musicSites);
+            RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/member/show.jsp");
+            rd.forward(request, response);
+            return;
+
+        }
         if(fs.size()>0){
             favoliteCheck=1;
             request.setAttribute("favoliteCheck", favoliteCheck);
@@ -74,6 +84,7 @@ public class MemberShowServlet extends HttpServlet {
             request.setAttribute("check", false);
 
         }
+        request.setAttribute("check_member", false);
         request.setAttribute("member", member);
         request.setAttribute("musicSites",musicSites);
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/member/show.jsp");

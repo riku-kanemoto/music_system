@@ -25,23 +25,7 @@
           <div class="header__menu">
             <div class="acount">
               <ul class="acount-menu">
-                <!-- <li>
-                  <button class="acount-menu__btn">
-                    <i class="material-icons icon">person</i>
-                  </button>
-                </li> -->
-                <!-- <div id="login">
-                  <nav class="login-menu">
-                    <ul class="login-menu__main">
-                      <li class="login-menu__item">
-                        <a href="#">ログイン</a>
-                      </li>
-                      <li class="login-menu__item">
-                        <a href="#">新規登録</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>   -->
+
               </ul>
             </div>
             <div class="category">
@@ -56,24 +40,26 @@
       </header>
       <div class="show-title">
         <h1 class="show-title__item">${member.name}</h1>
-        <c:choose>
-            <c:when test="${check==true}">
-                <form method="POST" action="<c:url value='/follow/destroy'/>" class="follow-btn">
-                  <input type="hidden" name="id" value="${member.id}">
-                  <button>
-                    フォロー中
-                  </button>
-                </form>
-            </c:when>
-            <c:otherwise>
-                <form method="POST" action="<c:url value='/follow/add'/>" class="follow-btn">
-                  <input type="hidden" name="id" value="${member.id}">
-                  <button>
-                    フォロー
-                  </button>
-                </form>
-            </c:otherwise>
-        </c:choose>
+        <c:if test="${!check_member}">
+            <c:choose>
+                <c:when test="${check==true}">
+                    <form method="POST" action="<c:url value='/follow/destroy'/>" class="follow-btn">
+                      <input type="hidden" name="id" value="${member.id}">
+                      <button>
+                        フォロー中
+                      </button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <form method="POST" action="<c:url value='/follow/add'/>" class="follow-btn">
+                      <input type="hidden" name="id" value="${member.id}">
+                      <button>
+                        フォロー
+                      </button>
+                    </form>
+                </c:otherwise>
+            </c:choose>
+        </c:if>
       </div>
         <section class="site-content">
           <div class="allsite">
