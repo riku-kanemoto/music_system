@@ -15,10 +15,14 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name="getAllMusicSites",
-            query="select m from MusicSite as m order by m.id desc"
+            query="select m from MusicSite as m where m.delete_flag=0 order by m.id desc"
             ),
     @NamedQuery(
             name="getMyMusicSites",
+            query="select m from MusicSite as m where m.member=:member AND m.delete_flag=0 order by m.id desc"
+            ),
+    @NamedQuery(
+            name="getMemberMusicSites",
             query="select m from MusicSite as m where m.member=:member order by m.id desc"
             )
 })
@@ -35,8 +39,7 @@ public class MusicSite {
 
     @Column(name="url",nullable=false)
     private String url;
-    @Column(name="color_flag", nullable=false)
-    private Integer color_flag;
+
 
     @Column(name="delete_flag",nullable=false)
     private Integer delete_flag;
@@ -74,16 +77,6 @@ public class MusicSite {
     public void setUrl(String url) {
         this.url = url;
     }
-    public Integer getColor_flag() {
-        return color_flag;
-    }
-
-    public void setColor_flag(Integer color_flag) {
-        this.color_flag = color_flag;
-    }
-
-
-
     public Integer getDelete_flag() {
         return delete_flag;
     }

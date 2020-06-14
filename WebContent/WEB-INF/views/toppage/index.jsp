@@ -9,7 +9,7 @@
           <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
           <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
           <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
-          <title>Document</title>
+          <title>Site site</title>
     </head>
     <body>
 
@@ -27,9 +27,11 @@
               <div class="acount">
                 <ul class="acount-menu">
                   <li>
+                  <form method="GET" action="<c:url value='/login'/>">
                     <button class="acount-menu__btn">
                       <i class="material-icons icon">person</i>
                     </button>
+                  </form>
                   </li>
                 </ul>
               </div>
@@ -91,20 +93,10 @@
             </li>
           </ul>
         </li>
-        <li class="category-menu__item">
-          <span class="main-title">Category</span>
-          <ul class="menu-title">
-            <li class="menu-title__item">
-              <a href="#" class="sub-title">Music</a>
-            </li>
-            <li class="menu-title__item">
-              <a href="#" class="sub-title">IT</a>
-            </li>
-          </ul>
-        </li>
+
       </ul>
     </nav>
   </div>
-        <script type="text/javascript" src='<c:url value="/scripts/category-menu.js"/>'></script>
+<script type="text/javascript" src='<c:url value="/scripts/category-menu.js"/>'></script>
 </body>
 </html>

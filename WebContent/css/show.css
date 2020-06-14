@@ -20,7 +20,7 @@ body {
   font-size: 20px;
 }
 
-.font-title, .mysite-title__item {
+.font-title, .show-title__item {
   font-size: 25px;
 }
 
@@ -29,14 +29,14 @@ body {
   margin: 0 auto;
 }
 
-.circle, .allsite__site__create, .allsite__site__item__link {
+.circle, .allsite__site__item__link {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border: 3px solid red;
+  border: 0.5px solid red;
 }
 
-.circle-link, .allsite__site__create > .create, .allsite__site__item__link > .link {
+.circle-link, .allsite__site__item__link > .link {
   position: absolute;
   top: 0;
   left: 0;
@@ -177,7 +177,7 @@ body {
   color: black;
 }
 
-.mysite-title {
+.show-title {
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -189,6 +189,50 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
+}
+
+.follow-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 3%;
+}
+
+.follow-btn > button {
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 10%;
+  font-weight: 500;
+}
+
+.follow-btn-destroy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 3%;
+}
+
+.follow-btn-destroy > button {
+  background-color: red;
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 10%;
+  font-weight: 500;
 }
 
 .site-content {
@@ -208,6 +252,7 @@ body {
 .allsite__site {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
+  margin-bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,32 +264,12 @@ body {
           align-items: center;
 }
 
-.allsite__site__create {
-  background-color: white;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  position: relative;
-}
-
-.allsite__site__create > .create {
-  cursor: pointer;
-}
-
-.allsite__site__create > p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 85px;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-}
-
 .allsite__site__item {
   text-align: center;
 }
 
 .allsite__site__item__link {
-  background-color: white;
+  background-color: green;
   position: relative;
 }
 
@@ -270,8 +295,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-
-  margin-top: 5px;
+  margin-top: 5%;
 }
 
 .allsite__site__item__name a {
@@ -279,27 +303,16 @@ body {
   color: red;
 }
 
-.allsite__site__item__name .edit-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 5%;
+#favorite {
+  color: red;
 }
 
-.allsite__site__item__name .edit-btn button {
+.favolite-btn {
+  cursor: pointer;
+  background-color: unset;
   border: none;
   outline: none;
-  border-radius: 10%;
-  font-weight: 500;
 }
-
-
 
 @media (min-width: 480px) {
   /******************************************************************
@@ -336,14 +349,14 @@ Stylesheet: 960px以上のモニタで適用
   .font-lg, .header__name {
     font-size: 23px;
   }
-  .font-title, .mysite-title__item {
+  .font-title, .show-title__item {
     font-size: 28px;
   }
   .allsite__site {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
-  .mysite-title {
+  .show-title {
     height: 100px;
   }
 }

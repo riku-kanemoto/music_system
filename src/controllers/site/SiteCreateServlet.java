@@ -44,7 +44,7 @@ public class SiteCreateServlet extends HttpServlet {
             m.setMember((Member)request.getSession().getAttribute("login_member"));
             m.setName(request.getParameter("name"));
             m.setUrl(request.getParameter("url"));
-            m.setColor_flag(Integer.parseInt(request.getParameter("color_flag")));
+
 
             Timestamp currentTime=new Timestamp(System.currentTimeMillis());
             m.setCreated_at(currentTime);

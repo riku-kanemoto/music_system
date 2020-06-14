@@ -1,4 +1,4 @@
-package controllers.member;
+package controllers.follow;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,20 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Member;
-import models.MusicSite;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class MemberIndexServlet
+ * Servlet implementation class FollowIndexServlet
  */
-@WebServlet("/member/index")
-public class MemberIndexServlet extends HttpServlet {
+@WebServlet("/follow/index")
+public class FollowIndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberIndexServlet() {
+    public FollowIndexServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,30 +34,22 @@ public class MemberIndexServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        EntityManager em=DBUtil.createEntityManager();
-
+        EntityManager em =DBUtil.createEntityManager();
         Member login_member=(Member)request.getSession().getAttribute("login_member");
-        Integer favoliteCheck;
-
-        List<MusicSite> fs=em.createNamedQuery("getAllFavoliteSite",MusicSite.class)
-                .setParameter("member_id",login_member)
-                .getResultList();
-
-        List<MusicSite> musicSites=em.createNamedQuery("getAllMusicSites",MusicSite.class)
+        String error;
+        List<Member> follow_members=em.createNamedQuery("getAllFollowMembers",Member.class)
+                .setParameter("user_id", login_member)
                 .getResultList();
         em.close();
-        if(fs.size()==0){
-            favoliteCheck=0;
-            request.setAttribute("favoliteCheck", favoliteCheck);
-            request.setAttribute("musicSites", musicSites);
+        if(follow_members.size()>0){
+            error="";
+            request.setAttribute("error", error);
+            request.setAttribute("follow_members", follow_members);
         }else{
-            favoliteCheck=1;
-            request.setAttribute("favoliteCheck", favoliteCheck);
-            request.setAttribute("musicSites", musicSites);
-            request.setAttribute("fs",fs);
+            error="フォローしている人がいません。";
+            request.setAttribute("error", error);
         }
-
-        RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/member/index.jsp");
+        RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/follow/index.jsp");
         rd.forward(request, response);
     }
 

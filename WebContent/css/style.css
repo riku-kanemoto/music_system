@@ -4,8 +4,19 @@
 Stylesheet: ベーススタイル
 
 ******************************************************************/
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Playfair Display', serif;
+  height: 100%;
+  background-color: black;
+  margin: 0;
+}
+
+.font-ss, .allsite__site__item__account {
+  font-size: 11px;
 }
 
 .font-sm, .allsite__site__item__link > p, .allsite__site__item__name a {
@@ -33,7 +44,7 @@ body {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border: 0.5px solid red;
+  border: 3px solid red;
 }
 
 .circle-link, .allsite__site__create > .create, .allsite__site__item__link > .link {
@@ -42,15 +53,19 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
+  border-radius: 50%;
   z-index: 50;
+}
+
+#global-container {
+  background-color: white;
 }
 
 #container {
   position: relative;
-
-  z-index: 2;
   height: 100%;
   background-color: black;
+  z-index: 2;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -197,6 +212,10 @@ body {
   border: 0.2px solid red;
 }
 
+.site-content {
+  margin-top: 10px;
+}
+
 .allsite {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,12 +224,12 @@ body {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 10px 0;
 }
 
 .allsite__site {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
+  margin-bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,7 +242,7 @@ body {
 }
 
 .allsite__site__create {
-  background-color: green;
+  background-color: white;
   -ms-flex-item-align: start;
       align-self: flex-start;
   position: relative;
@@ -247,7 +266,7 @@ body {
 }
 
 .allsite__site__item__link {
-  background-color: green;
+  background-color: white;
   position: relative;
 }
 
@@ -263,9 +282,28 @@ body {
           transform: translateY(-50%) translateX(-50%);
 }
 
+.allsite__site__item__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
 .allsite__site__item__name a {
   text-decoration: none !important;
   color: red;
+}
+
+.allsite__site__item__account {
+  margin-top: 5px;
+  background-color: white;
+  border-radius: 50%;
 }
 
 #favorite_border {
@@ -355,4 +393,29 @@ Stylesheet: 1280px以上のモニタで適用
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
   }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /******************************************************************
+
+Stylesheet: Retinaディスプレイで適用
+
+******************************************************************/
+  /*
+
+EXAMPLE
+.icon {
+    background: url(images/test@2x.png) no-repeat;
+    background-size: 24px 24px;
+}
+
+*/
+}
+
+@media print {
+  /******************************************************************
+
+Stylesheet: プリンタのみに適用
+
+******************************************************************/
 }

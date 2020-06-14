@@ -43,13 +43,7 @@
               <label for="url">サイトURL</label>
             <input type="url" name="url" value="${musicSite.url}">
             </div>
-            <div class="create-menu__color">
-              <label for="color">背景色</label>
-              <input type="radio" name="color_flag" value="1" checked="checked">Red
-              <input type="radio" name="color_flag" value="2">Blue
-              <input type="radio" name="color_flag" value="3">Yellow
-              <input type="hidden" name="_token" value="${_token}" />
-            </div>
+            <input type="hidden" name="_token" value="${_token}">
             <div class="create-menu__btn">
               <button type="submit">投稿する</button>
             </div>

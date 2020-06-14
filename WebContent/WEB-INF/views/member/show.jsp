@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"href="${pageContext.request.contextPath}/css/reset.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet"href="${pageContext.request.contextPath}/css/mysite.css">
+  <link rel="stylesheet"href="${pageContext.request.contextPath}/css/show.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <title>My Site</title>
+  <title>Document</title>
 </head>
 <body>
   <div id="global-container">
@@ -19,7 +19,7 @@
           <div class="header__title">
             <span class="header__name">Site site</span>
             <div class="header__category">
-              <span class="header__category__name">My Site</span>
+              <span class="header__category__name">Music</span>
             </div>
           </div>
           <div class="header__menu">
@@ -54,40 +54,38 @@
           </div>
         </div>
       </header>
-      <div class="mysite-title">
+      <div class="show-title">
+        <h1 class="show-title__item">${member.name}</h1>
         <c:choose>
-            <c:when test="${haserror}">
-                <p>まだサイトを追加していません。追加してみましょう！<a href="<c:url value='/site/new'/>">こちらから</a></p>
+            <c:when test="${check==true}">
+                <form method="POST" action="<c:url value='/follow/destroy'/>" class="follow-btn">
+                  <input type="hidden" name="id" value="${member.id}">
+                  <button>
+                    フォロー中
+                  </button>
+                </form>
             </c:when>
             <c:otherwise>
-                <h1 class="mysite-title__item">My site</h1>
+                <form method="POST" action="<c:url value='/follow/add'/>" class="follow-btn">
+                  <input type="hidden" name="id" value="${member.id}">
+                  <button>
+                    フォロー
+                  </button>
+                </form>
             </c:otherwise>
         </c:choose>
-
       </div>
         <section class="site-content">
           <div class="allsite">
-            <div class="allsite__site">
-              <div class="allsite__site__create ">
-                <a href="<c:url value='/site/new'/>" class="create"></a>
-                <p>サイト追加</p>
-              </div>
-            </div>
-            <c:forEach var="musicSite" items="${musicSites}">
+                  <c:forEach var="musicSite" items="${musicSites}">
                 <div class="allsite__site">
                   <div class="allsite__site__item">
                     <div class="allsite__site__item__link ">
                       <a href="${musicSite.url}" class="link"></a>
-                          <p>${musicSite.name}</p>
+                      <p>${musicSite.name}</p>
                     </div>
                     <div class="allsite__site__item__name">
-                     <a href="${musicSite.url}">${musicSite.name}</a>
-                     <form method="GET" action="<c:url value='/site/edit'/>" class="edit-btn">
-                        <input type="hidden" name="id" value="${musicSite.id}">
-                        <button>
-                            edit
-                        </button>
-                     </form>
+                      <a href="${musicSite.url}">${musicSite.name}</a>
                     </div>
                   </div>
                 </div>
@@ -109,7 +107,10 @@
           <span class="main-title">Category</span>
           <ul class="menu-title">
             <li class="menu-title__item">
-              <a href="<c:url value='/member/index'/>" class="sub-title">Home</a>
+              <a href="#" class="sub-title">Home</a>
+            </li>
+            <li class="menu-title__item">
+              <a href="<c:url value='/mysite'/>" class="sub-title">My Site</a>
             </li>
             <li class="menu-title__item">
               <a href="<c:url value='/follow/index'/>" class="sub-title">Follow</a>
