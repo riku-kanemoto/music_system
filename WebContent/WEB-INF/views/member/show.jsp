@@ -63,7 +63,7 @@
       </div>
         <section class="site-content">
           <div class="allsite">
-                  <c:forEach var="musicSite" items="${musicSites}">
+           <c:forEach var="musicSite" items="${musicSites}">
                 <div class="allsite__site">
                   <div class="allsite__site__item">
                     <div class="allsite__site__item__link ">
@@ -93,7 +93,7 @@
           <span class="main-title">Category</span>
           <ul class="menu-title">
             <li class="menu-title__item">
-              <a href="#" class="sub-title">Home</a>
+              <a href="<c:url value='/toppage/index'/>" class="sub-title">Home</a>
             </li>
             <li class="menu-title__item">
               <a href="<c:url value='/mysite'/>" class="sub-title">My Site</a>
